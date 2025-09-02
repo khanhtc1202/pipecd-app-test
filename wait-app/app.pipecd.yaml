@@ -1,0 +1,14 @@
+apiVersion: pipecd.dev/v1beta1
+kind: Application
+spec:
+  name: wait-app
+  labels:
+    owner: khanhtc1202
+    env: local
+  planner:
+    alwaysUsePipeline: true
+  pipeline:
+    stages:
+      - name: WAIT
+        with:
+          duration: 30s
