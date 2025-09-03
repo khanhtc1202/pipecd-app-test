@@ -16,6 +16,8 @@ spec:
         with:
           duration: 30s
       - name: K8S_SYNC
+        with:
+          prune: true
   plugins:
     kubernetes:
       input:
