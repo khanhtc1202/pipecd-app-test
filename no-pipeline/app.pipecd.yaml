@@ -1,0 +1,11 @@
+apiVersion: pipecd.dev/v1beta1
+kind: Application
+spec:
+  name: simple-k8s-sync-no-pipeline
+  labels:
+    owner: khanhtc1202
+    env: local
+  plugins:
+    kubernetes:
+      input:
+        namespace: default
