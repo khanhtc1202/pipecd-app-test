@@ -16,3 +16,7 @@ spec:
         with:
           duration: 30s
       - name: K8S_SYNC
+  plugins:
+    kubernetes:
+      input:
+        namespace: default
