@@ -1,0 +1,20 @@
+apiVersion: pipecd.dev/v1beta1
+kind: Application
+spec:
+  name: hello-app
+  labels:
+    owner: khanhtc1202
+    env: nowhere
+  planner:
+    alwaysUsePipeline: true
+  pipeline:
+    stages:
+      - name: EXAMPLE_HELLO
+        with:
+          name: khanhtc1202
+      - name: WAIT
+        with:
+          duration: 20s
+      - name: EXAMPLE_GOODBYE
+        with:
+          message: See you next time!
