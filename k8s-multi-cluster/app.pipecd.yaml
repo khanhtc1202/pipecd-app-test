@@ -1,0 +1,21 @@
+apiVersion: pipecd.dev/v1beta1
+kind: Application
+spec:
+  name: k8s-multi-clusters
+  labels:
+    owner: khanhtc1202
+  plugins:
+    kubernetes_multicluster:
+      quickSync:
+        prune: true
+      input:
+        multiTargets:
+          - target:
+              name: docker-desktop
+            manifests:
+              - ./cluster1/deployment.yaml
+          - target:
+              name: gcp-khanhtc-dev
+            manifests:
+              - ./cluster2/deployment.yaml
+        kubectlVersion: 1.32.2
