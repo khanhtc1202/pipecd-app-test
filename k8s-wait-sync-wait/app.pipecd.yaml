@@ -1,0 +1,25 @@
+apiVersion: pipecd.dev/v1beta1
+kind: Application
+spec:
+  name: k8s-wait-sync-wait
+  labels:
+    env: local
+    owner: khanhtc1202
+  input:
+    manifests:
+      - deployment.yaml
+  pipeline:
+    stages:
+      - name: WAIT
+        with:
+          duration: 20s
+      - name: K8S_SYNC
+        with:
+          prune: true
+      - name: WAIT
+        with:
+          duration: 20s
+  plugins:
+    kubernetes:
+      input:
+        namespace: default
