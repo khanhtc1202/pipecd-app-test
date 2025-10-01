@@ -10,10 +10,10 @@ spec:
       - name: WAIT
         with:
           duration: 30s
-      - name: K8S_SYNC
-        with:
-          prune: true
       - name: WAIT_APPROVAL
         with:
           approvers:
             - khanhtc1202
+      - name: K8S_SYNC
+        with:
+          prune: true
