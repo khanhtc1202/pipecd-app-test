@@ -5,6 +5,8 @@ spec:
   labels:
     env: play
     team: product
+  quickSync:
+    prune: true
   input:
     manifests:
       - deployment.yaml
