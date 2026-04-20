@@ -8,6 +8,7 @@ spec:
   input:
     manifests:
       - deployment.yaml
+      - service.yaml
     kubectlVersion: 1.32.2
   description: |
     This app demonstrates how to deploy a Kubernetes application with [Quick Sync](https://pipecd.dev/docs/concepts/#sync-strategy) strategy.\
